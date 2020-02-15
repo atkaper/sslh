@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Arnaud Mondit <github.com/amondit>
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
-    && apt-get -y install sslh \
+    && apt-get -y install sslh tzdata \
     && rm -rf /var/lib/apt/lists/*
 ENV LISTEN_IP 0.0.0.0
 ENV LISTEN_PORT 443
